@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": "junmer/fontmin-typeface",
   "author": "junmer",
-  "file": [
+  "files": [
     "lib",
     "index.js"
   ],
