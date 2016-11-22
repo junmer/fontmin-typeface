@@ -4,7 +4,8 @@
   "description": "typeface fontmin plugin",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout=50000"
+    "test": "mocha --timeout=50000",
+    "dev": "python -m SimpleHTTPServer 8081"
   },
   "license": "MIT",
   "repository": "junmer/fontmin-typeface",

@@ -17,8 +17,8 @@ var typeface = require('./index');
 
 var Fontmin = require('fontmin');
 
-var outputPath = 'output';
-var fontFileName = 'SentyBrush-Regular-test';
+var outputPath = 'example/fonts/build';
+var fontFileName = 'sentybrush_regular';
 
 before(function (done) {
     del(outputPath).then(function () {
@@ -34,7 +34,7 @@ it('output is typeface.json', function (done) {
     var stream = vfs.src(['fixtures/*.ttf'], fsOpt)
         .pipe(Fontmin.glyph({text: 'hello world'})())
         .pipe(typeface({clone: false})())
-        .pipe(vfs.dest('output', fsOpt));
+        .pipe(vfs.dest(outputPath, fsOpt));
 
     stream.on('end', function (a) {
         var filePath = path.resolve(outputPath, fontFileName + '.typeface.json');
