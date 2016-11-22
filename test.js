@@ -37,8 +37,18 @@ it('output is typeface.json', function (done) {
         .pipe(vfs.dest(outputPath, fsOpt));
 
     stream.on('end', function (a) {
+
         var filePath = path.resolve(outputPath, fontFileName + '.typeface.json');
-        assert.ok(fs.existsSync(filePath));
+
+        assert.ok(fs.existsSync(filePath), 'file exists');
+
+        var typefaceJson = require(filePath);
+
+        assert.ok(
+            Object.keys(typefaceJson.glyphs).length,
+            'has glyphs'
+        );
+
         done();
     });
 

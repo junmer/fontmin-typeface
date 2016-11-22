@@ -18,6 +18,7 @@ var typeface = require('fontmin-typeface');
 
 var fontmin = new Fontmin()
     .src('fonts/*.ttf')
+    .use(Fontmin.glyph({text: 'hello world'}))
     .use(typeface({filetype: 'json'}))
     .dest('build/fonts');
     
@@ -29,6 +30,7 @@ fontmin.run(function (err, files) {
     console.log('Files typeface successfully!'); 
 });
 ```
+
 ## Related
 
 - [fontmin](https://github.com/ecomfe/fontmin)
