@@ -31,7 +31,7 @@ it('output is typeface.json', function (done) {
 
     var fsOpt = {cwd: __dirname};
 
-    var stream = vfs.src(['fixtures/' + fontFileName + '.ttf'], fsOpt)
+    var stream = vfs.src(['fixtures/*.ttf'], fsOpt)
         .pipe(Fontmin.glyph({text: 'hello world'})())
         .pipe(typeface({clone: false})())
         .pipe(vfs.dest('output', fsOpt));

@@ -17,9 +17,8 @@ var svg = require('./lib/svg');
  */
 function ttf2typeface (font) {
 
-    // var scale = (1000 * 100) / ( (font.head.unitsPerEm || 2048) *72);
     var result = {};
-
+    var scale = (1000 * 100) / ( (font.head.unitsPerEm || 2048) *72);
     result.familyName = font.name.fontFamily;
     var fontSubFamily = font.name.fontSubFamily;
     result.cssFontWeight = /bold/i.test(fontSubFamily) ? 'bold' : 'normal';
@@ -43,32 +42,35 @@ function ttf2typeface (font) {
         "xMax": font.head.xMax
     };
 
+
     result.glyphs = {};
+    function getGlyph (glyph) {
+
+        return {
+            o: svg.contours2svg(glyph.contours).toLocaleLowerCase(),
+            // x_min: Math.round(glyph.xMin * scale),
+            // y_min: Math.round(glyph.yMin * scale),
+            // x_max: Math.round(glyph.xMax * scale),
+            // y_xax: Math.round(glyph.yMax * scale),
+            // ha: Math.round(glyph.advanceWidth * scale),
+
+            x_min: glyph.xMin,
+            y_min: glyph.yMin,
+            x_max: glyph.xMax,
+            y_xax: glyph.yMax,
+            ha: glyph.advanceWidth
+
+        };
+    }
+
     font.glyf.forEach(function (glyph) {
 
         if (!glyph.unicode) {
             return;
         }
+
         glyph.unicode.forEach(function (code) {
-
-            var token = {
-                o: svg.contours2svg(glyph.contours),
-
-                // x_min: Math.round(glyph.xMin * scale),
-                // y_min: Math.round(glyph.yMin * scale),
-                // x_max: Math.round(glyph.xMax * scale),
-                // y_xax: Math.round(glyph.yMax * scale),
-                // ha: Math.round(glyph.advanceWidth * scale)
-
-                x_min: glyph.xMin,
-                y_min: glyph.yMin,
-                x_max: glyph.xMax,
-                y_xax: glyph.yMax,
-                ha: glyph.advanceWidth
-            };
-
-            result.glyphs[String.fromCharCode(code)] = token;
-
+            result.glyphs[String.fromCharCode(code)] = getGlyph(glyph);
         });
     });
 
