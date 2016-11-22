@@ -1,4 +1,11 @@
-# fontmin-typeface [![Build Status](http://img.shields.io/travis/junmer/fontmin-typeface.svg?style=flat)](https://travis-ci.org/junmer/fontmin-typeface) 
+fontmin-typeface 
+===
+
+[![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+[![Dependencies][dep-image]][dep-url]
+
 
 > typeface fontmin plugin
 
@@ -44,3 +51,11 @@ open <http://127.0.0.1:8080/example/>
 
 - [fontmin](https://github.com/ecomfe/fontmin)
 - [three.js](https://github.com/mrdoob/three.js)
+
+[travis-url]: https://travis-ci.org/junmer/fontmin-typeface
+[travis-image]: http://img.shields.io/travis/junmer/fontmin-typeface.svg
+[downloads-image]: http://img.shields.io/npm/dm/fontmin-typeface.svg
+[npm-url]: https://npmjs.org/package/fontmin-typeface
+[npm-image]: http://img.shields.io/npm/v/fontmin-typeface.svg
+[dep-url]: https://david-dm.org/junmer/fontmin-typeface
+[dep-image]: http://img.shields.io/david/junmer/fontmin-typeface.svg
