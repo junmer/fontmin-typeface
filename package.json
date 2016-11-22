@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout=50000",
-    "dev": "python -m SimpleHTTPServer 8081"
+    "dev": "http-server ./"
   },
   "license": "MIT",
   "repository": "junmer/fontmin-typeface",
   "author": "junmer",
-  "file": ["lib", "index.js"],
+  "file": [
+    "lib",
+    "index.js"
+  ],
   "dependencies": {
     "replace-ext": "^1.0.0",
     "through2": "^2.0.1",
@@ -18,8 +21,9 @@
   },
   "devDependencies": {
     "del": "^2.2.0",
+    "fontmin": "^0.9.6",
+    "http-server": "^0.9.0",
     "mocha": "^2.1.0",
-    "vinyl-fs": "^2.3.1",
-    "fontmin": "^0.9.6"
+    "vinyl-fs": "^2.3.1"
   }
 }
