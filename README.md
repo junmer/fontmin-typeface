@@ -31,6 +31,15 @@ fontmin.run(function (err, files) {
 });
 ```
 
+## Example
+
+```
+npm run example
+```
+open <http://127.0.0.1:8080/example/>
+
+![hello](./example/img/hello.jpeg)
+
 ## Related
 
 - [fontmin](https://github.com/ecomfe/fontmin)

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout=50000",
-    "dev": "http-server ./"
+    "example": "http-server ./"
   },
   "license": "MIT",
   "repository": "junmer/fontmin-typeface",
@@ -13,6 +13,14 @@
   "file": [
     "lib",
     "index.js"
+  ],
+  "keywords": [
+    "font",
+    "webgl",
+    "typeface",
+    "three.js",
+    "textMesh",
+    "fontmin"
   ],
   "dependencies": {
     "replace-ext": "^1.0.0",
